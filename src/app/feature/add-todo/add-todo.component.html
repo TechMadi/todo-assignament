@@ -1,0 +1,6 @@
+<form [formGroup]="addTodoForm">
+  <div class="form-group">
+    <input type="text" placeholder="New Todo" formControlName="newTodo" />
+    <button type="submit" (click)="submit()">+ Add</button>
+  </div>
+</form>
