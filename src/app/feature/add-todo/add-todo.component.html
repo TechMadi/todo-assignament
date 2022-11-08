@@ -1,6 +1,18 @@
 <form [formGroup]="addTodoForm">
-  <div class="form-group">
-    <input type="text" placeholder="New Todo" formControlName="newTodo" />
-    <button type="submit" (click)="submit()">+ Add</button>
+  <div class="form-group text-center">
+    <input
+      type="text"
+      placeholder="New Todo"
+      formControlName="newTodo"
+      class="form-control"
+    />
+    <button
+      type="submit"
+      (click)="submit()"
+      [disabled]="addTodoForm.invalid"
+      class="btn btn-danger mt-2 w-50"
+    >
+      <i class="fa fa-plus" aria-hidden="true"></i> Add Todo
+    </button>
   </div>
 </form>

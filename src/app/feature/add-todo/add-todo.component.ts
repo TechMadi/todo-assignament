@@ -12,18 +12,19 @@ export class AddTodoComponent implements OnInit {
     newTodo: new FormControl('', Validators.required),
   });
 
-  @Output() todoToAdd = new EventEmitter<ITodo>
+  @Output() todoToAdd: EventEmitter<ITodo> = new EventEmitter();
   constructor() {}
 
   ngOnInit(): void {}
 
   submit() {
     let todo: ITodo = {
+      id: Math.random(),
       status: false,
       ...this.addTodoForm.value,
     };
 
-    this.todoToAdd.emit(todo)
-    
+    this.todoToAdd.emit(todo);
+    this.addTodoForm.reset();
   }
 }
